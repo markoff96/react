@@ -10,18 +10,25 @@ const texts = [
   'Kill me!',
   'Pull!'
 ]
+
 function App() {
   const[count, setCount] = useState(0)
+  const incrementCount = () => {
+    setCount(count + 1)
+  }
   return (
     <div className='App'>
-      <RandomNumber maxNum={1000} />
       <Counter count={count}/>
       <Button count={count}  onClick={setCount} text ={texts[0]}/>
-      <Button count={count}  onClick={setCount} text = {texts[1]}/>
-      <Button count={count}  onClick={setCount} text = {texts[2]}/>
-      <Button count={count}  onClick={setCount} text = {texts[3]}/>
+      {texts.map((text) => {
+        return (
+          <Button onClick={incrementCount} text={text}/>
+        )
+      })}
     </div>
   )
 }
+
+
 
 export default App 
