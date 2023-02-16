@@ -1,18 +1,27 @@
+import { useState } from 'react'
 import './App.css'
-import MyComponent from './components/MyComponent'
-import ParModule from './components/ParModule'
-import PetInfo from './components/PetInfo'
 import RandomNumber from './components/RandomNumer'
+import Counter from './components/Conter'
+import Button from './components/Button'
 
+const texts = [
+  'Click me!',
+  'Push!' ,
+  'Kill me!',
+  'Pull!'
+]
 function App() {
+  const[count, setCount] = useState(0)
   return (
     <div className='App'>
-      <MyComponent />
-      <ParModule />
-      <PetInfo animal='cat' age='12'  hasPet/>
-      <PetInfo animal='duck' age='13' hasPet={false}/>
-      <RandomNumber />
+      <RandomNumber maxNum={1000} />
+      <Counter count={count}/>
+      <Button count={count}  onClick={setCount} text ={texts[0]}/>
+      <Button count={count}  onClick={setCount} text = {texts[1]}/>
+      <Button count={count}  onClick={setCount} text = {texts[2]}/>
+      <Button count={count}  onClick={setCount} text = {texts[3]}/>
     </div>
   )
 }
-export default App
+
+export default App 
