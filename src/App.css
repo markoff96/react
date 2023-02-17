@@ -1,3 +1,18 @@
 .App {
   text-align: center;
+  margin-top: 100px;
+}
+
+
+form {
+font-size: 30px;
+}
+
+input{
+  margin: 15px;
+  padding: 10px;
+}
+
+label{
+  display: block;
 }
